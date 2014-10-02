@@ -125,6 +125,7 @@ module IMS::LTI
 
       consumer = OAuth::Consumer.new(@consumer_key, @consumer_secret)
       token = OAuth::AccessToken.new(consumer)
+      puts generate_request_xml
       res = token.post(
               @lis_outcome_service_url,
               generate_request_xml,
